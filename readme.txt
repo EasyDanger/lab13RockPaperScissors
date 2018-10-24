@@ -3,10 +3,17 @@ Task: Rock Paper Scissors
 
 Version History
 1.0--10/24/2018--Initial commit, logic written.
-	--Let's user choose from two opponents with unique play styles. 
-	--let's user play rock/paper/scissors
+	--Lets user choose from two opponents with unique play styles. 
+	--lets user play rock/paper/scissors
 	--displays win/lose/draw record
 	Known Issues
+	--non main classes not commented.
+	--non main classes disorganized, incomplete
+	--testing
+	--code cleanup
+1.1--10/24/2018--minor update
+	--lets user enter any string starting with r, s, or p.
+	known issues
 	--non main classes not commented.
 	--non main classes disorganized, incomplete
 	--testing
