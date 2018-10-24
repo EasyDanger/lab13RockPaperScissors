@@ -1,4 +1,5 @@
 package lab13;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,7 +10,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Vali {
-	
+
 	/**
 	 * Get any valid integer.
 	 */
@@ -41,12 +42,12 @@ public class Vali {
 				System.out.println("Enter a number, in digits.");
 			}
 		} while (!isValid);
-		
+
 		double number = scnr.nextDouble();
 		scnr.nextLine();
 		return number;
 	}
-	
+
 	/**
 	 * Get any string.
 	 */
@@ -55,7 +56,7 @@ public class Vali {
 		System.out.print(prompt);
 		return scnr.nextLine();
 	}
-	
+
 	/**
 	 * Get any valid integer between min and max.
 	 */
@@ -64,7 +65,7 @@ public class Vali {
 		int number;
 		do {
 			number = getInt(scnr, prompt);
-			
+
 			if (number < min) {
 				isValid = false;
 				System.out.println("The number must be at least " + min);
@@ -74,11 +75,11 @@ public class Vali {
 			} else {
 				isValid = true;
 			}
-			
+
 		} while (!isValid);
 		return number;
 	}
-	
+
 	/**
 	 * Get any valid double between min and max.
 	 */
@@ -87,7 +88,7 @@ public class Vali {
 		double number;
 		do {
 			number = getDouble(scnr, prompt);
-			
+
 			if (number < min) {
 				isValid = false;
 				System.out.println("The number must be at least " + min);
@@ -97,11 +98,11 @@ public class Vali {
 			} else {
 				isValid = true;
 			}
-			
+
 		} while (!isValid);
 		return number;
 	}
-	
+
 	/**
 	 * Get a string of input from the user that must match the given regex.
 	 */
@@ -110,14 +111,14 @@ public class Vali {
 		String input;
 		do {
 			input = getString(scnr, prompt);
-			
+
 			if (input.matches(regex)) {
 				isValid = true;
 			} else {
 				System.out.println("Input must match the appropriate format.");
 				isValid = false;
 			}
-			
+
 		} while (!isValid);
 		return input;
 	}
@@ -136,7 +137,8 @@ public class Vali {
 			input = getString(scnr, prompt);
 			// Step 2: convert it to a date
 			try {
-				// format.parse throws a ParseException, which is a checked exception and MUST be caught.
+				// format.parse throws a ParseException, which is a checked exception and MUST
+				// be caught.
 				date = format.parse(input);
 				// If exception doesn't occur, it's valid.
 				isValid = true;
@@ -145,21 +147,21 @@ public class Vali {
 				isValid = false;
 				System.out.println("Enter a valid date in format mm/dd/yyyy.");
 			}
-			
+
 		} while (!isValid);
 		return date;
 	}
+
 	public static String stringIsKey(String string, Map<String, Object> map) {
 		Set<String> keys = map.keySet();
 		Iterator<String> iter = keys.iterator();
 		String key;
 		do {
 			key = iter.next();
-		}
-			while (iter.hasNext() && !key.equalsIgnoreCase(string)); 
+		} while (iter.hasNext() && !key.equalsIgnoreCase(string));
 		return key;
 	}
-	
+
 	public static boolean checkYes(String yes) {
 		boolean isYes;
 		// Method will accept yes or no. Basically gives user a direct way to affect the
@@ -171,7 +173,9 @@ public class Vali {
 		}
 		return isYes;
 	}
-	//checks whether a date is a real, possible date. Seems redundant. Check existent date classes later. 
+
+	// checks whether a date is a real, possible date. Seems redundant. Check
+	// existent date classes later.
 	public static boolean isDate(String userDate) {
 		boolean isValid = true;
 		if (userDate.matches("\\d\\d/\\d\\d/\\d{4}")) {
@@ -220,6 +224,7 @@ public class Vali {
 		}
 		return isValid;
 	}
+
 	public static int enumInArray(Enum ar[], Enum num) {
 		int index = -1;
 		for (int i = 0; i < ar.length; i++) {
@@ -229,6 +234,7 @@ public class Vali {
 		}
 		return index;
 	}
+
 	public static int stringInArrayAt(String ar[], String str) {
 		int index = -1;
 		for (int i = 0; i < ar.length; i++) {
