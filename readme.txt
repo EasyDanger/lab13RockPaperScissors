@@ -18,4 +18,10 @@ Version History
 	--non main classes disorganized, incomplete
 	--testing
 	--code cleanup
-	
+1.2--10/24/2018--minor update
+	--allows user to enter their name.
+	Known issues 
+	--non main classes not commented.
+	--non main classes disorganized, incomplete
+	--testing
+	--code cleanup

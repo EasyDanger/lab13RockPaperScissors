@@ -1,5 +1,5 @@
 package lab13;
-
+//abstract class player will extend into the actual players. 
 public abstract class Player {
 	String name;
 	Roshambo strat;

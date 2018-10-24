@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Youser extends Player {
 
+	private static String name;
+
 	@Override
 	public Roshambo generateRoshambo() {
 		Scanner read = new Scanner(System.in);
@@ -25,6 +27,14 @@ public class Youser extends Player {
 	}
 
 	public Youser() {
+	}
+
+	public static String getName() {
+		return name;
+	}
+
+	public static void setName(String name2) {
+		name = name2;
 	}
 
 }

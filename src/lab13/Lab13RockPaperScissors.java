@@ -22,8 +22,10 @@ public class Lab13RockPaperScissors {
 		//startup greeting
 		System.out.println("Oh, so you wanna play?");
 		//loop for main menu.
+		String pname = Vali.getString(read, "What's your name, buddy?");
+		Youser.setName(pname);
 		do {
-			System.out.println("\n\nChoose an opponent!\n");
+			System.out.println("\n\nChoose an opponent, " + Youser.getName() + "!\n");
 			//user can choose opponent's name or number.
 			System.out.println(
 					"1. Bart. \nBart knows what he wants and knows how to get it.\nChallenge him if you're the same.\n");
@@ -49,13 +51,13 @@ public class Lab13RockPaperScissors {
 			else if (opp.equalsIgnoreCase("3") || opp.equalsIgnoreCase("quit")) {
 				finished = true;
 			} else {
-				System.out.println("Sorry we didn't get that. please choose another option.");
+				System.out.println("Sorry, " + Youser.getName() + " we didn't get that. please choose another option.");
 			}
 		} while (!finished);
 		//goodbye.
 		System.out.println("Thanks for playing!");
 		//Prints the user's record.
-		System.out.println("(This session you got: " + w + " wins/" + l + " losses/" + d + " draws)");
+		System.out.println("(This session " + Youser.getName() + " got: " + w + " wins/" + l + " losses/" + d + " draws)");
 	}
 //lets the user play Danny, who chooses randomly.
 	private static void danny() {
@@ -63,7 +65,7 @@ public class Lab13RockPaperScissors {
 		Roshambo youThrow = you.generateRoshambo();
 		Roshambo dannyThrow = bart.generateRoshambo();
 		//display what each throw was.
-		System.out.println("You threw " + youThrow + ". Danny threw " + dannyThrow + ".");
+		System.out.println(Youser.getName() + " threw " + youThrow + ". Danny threw " + dannyThrow + ".");
 		//equal throws are a draw
 		if (dannyThrow == youThrow) {
 			System.out.println("You reached a draw.\n");
@@ -85,7 +87,7 @@ public class Lab13RockPaperScissors {
 		Roshambo youThrow = you.generateRoshambo();
 		Roshambo bartThrow = bart.generateRoshambo();
 
-		System.out.println("You threw " + youThrow + ". Bart threw " + bartThrow + ".");
+		System.out.println(Youser.getName() + " threw " + youThrow + ". Bart threw " + bartThrow + ".");
 
 		if (bartThrow == youThrow) {
 			System.out.println("You reached a draw.\n");
